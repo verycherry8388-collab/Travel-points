@@ -1,4 +1,4 @@
-/* TravelPoints - TPX Wallet Engine */
+* TravelPoints - TPX Wallet Engine */
 
 const STARTING_BALANCE = 27500;
 
@@ -122,3 +122,4 @@ function renderDeals() {
     .map(
       (d, i) => `
         <article class
+        
