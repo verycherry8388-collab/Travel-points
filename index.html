@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TravelPoints MVP</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="brand">✈️ <span>TravelPoints</span></div>
+  <div class="balance">TPX <b id="topBalance">27,500</b></div>
+</header>
+<main>
+  <section id="home" class="screen active">
+    <div class="hero">
+      <p class="eyebrow">TRAVEL MORE. PAY LESS.</p>
+      <h1>Turn rewards into travel.</h1>
+      <p>Earn free TPX, buy more when you need it, and unlock special travel deals.</p>
+      <div class="actions"><button onclick="show('travel')">Search Hotels</button><button class="secondary" onclick="show('earn')">Earn Free TPX</button></div>
+    </div>
+    <h2>🔥 Liquidation Deals</h2>
+    <div class="cards" id="dealCards"></div>
+  </section>
+
+  <section id="travel" class="screen">
+    <h1>Find a hotel</h1>
+    <div class="searchbox">
+      <input id="destination" value="Miami" placeholder="Destination">
+      <input type="date" id="checkin">
+      <input type="date" id="checkout">
+      <button onclick="searchHotels()">Search</button>
+    </div>
+    <div id="hotelResults" class="cards"></div>
+  </section>
+
+  <section id="earn" class="screen">
+    <h1>Earn Free TPX</h1>
+    <div class="earn-grid">
+      <article><h3>🎁 Welcome</h3><p>Already claimed</p><strong>+2,500 TPX</strong></article>
+      <article><h3>📅 Daily check-in</h3><p>Claim today's reward</p><strong>+100 TPX</strong><button onclick="reward(100,'Daily check-in')">Claim</button></article>
+      <article><h3>👥 Refer a friend</h3><p>Earn when a qualified friend joins.</p><strong>+5,000 TPX</strong><button onclick="reward(5000,'Referral bonus')">Demo claim</button></article>
+      <article><h3>📝 Travel survey</h3><p>Tell us your travel preferences.</p><strong>+500 TPX</strong><button onclick="reward(500,'Travel survey')">Claim</button></article>
+    </div>
+  </section>
+
+  <section id="wallet" class="screen">
+    <h1>Your Wallet</h1>
+    <div class="wallet-card"><span>Available TPX</span><strong id="walletBalance">27,500</strong><div><button onclick="show('buy')">Buy TPX</button><button class="secondary" onclick="show('earn')">Earn</button></div></div>
+    <h2>Activity</h2>
+    <div id="transactions"></div>
+  </section>
+
+  <section id="buy" class="screen">
+    <h1>Buy TPX</h1>
+    <p>Demo purchase flow — no real payment is processed.</p>
+    <div class="packages" id="packages"></div>
+  </section>
+
+  <section id="confirmation" class="screen">
+    <div class="confirmation"><div class="check">✓</div><h1>You're booked!</h1><p id="confirmationText"></p><button onclick="show('home')">Back Home</button></div>
+  </section>
+
+  <section id="account" class="screen">
+    <h1>Account</h1>
+    <div class="panel"><b>Demo Traveler</b><p>demo@travelpoints.app</p><hr><p>Upcoming trips</p><p>Past trips</p><p>Payment methods</p><p>Support</p><p>Terms & Rewards Rules</p></div>
+  </section>
+
+  <section id="admin" class="screen">
+    <h1>Admin Dashboard</h1>
+    <div class="stats"><div><span>Users</span><b>125,420</b></div><div><span>TPX outstanding</span><b>8.2B</b></div><div><span>Bookings</span><b>18,230</b></div><div><span>Revenue</span><b>$386K</b></div></div>
+    <div class="panel"><h3>Operations</h3><p>Users · TPX ledger · Deals · Inventory · Bookings · Payments · Fraud review</p></div>
+  </section>
+</main>
+<nav>
+  <button onclick="show('home')">🏠<small>Home</small></button>
+  <button onclick="show('travel')">🏨<small>Travel</small></button>
+  <button onclick="show('earn')">🎁<small>Earn</small></button>
+  <button onclick="show('wallet')">👛<small>Wallet</small></button>
+  <button onclick="show('account')">👤<small>Account</small></button>
+</nav>
+<script src="app.js"></script>
+</body>
+</html>
